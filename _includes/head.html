@@ -1,0 +1,27 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- assign theme_style = site.style | default: 'dark' -%}
+  {%- if site.listen_for_clients_preferred_style -%}
+    {%- assign theme_css = '/assets/main.css' -%}
+    <meta name="color-scheme" content="dark light">
+  {%- else -%}
+    {%- case theme_style -%}
+      {%- when 'light' -%}
+        {%- assign theme_css = '/assets/main-light.css' -%}
+      {%- when 'nord' -%}
+        {%- assign theme_css = '/assets/main-nord.css' -%}
+      {%- when 'hacker' -%}
+        {%- assign theme_css = '/assets/main-hacker.css' -%}
+      {%- else -%}
+        {%- assign theme_css = '/assets/main-dark.css' -%}
+    {%- endcase -%}
+    <meta name="color-scheme" content="{% if theme_style == 'light' %}light{% else %}dark{% endif %}">
+  {%- endif -%}
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ theme_css | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/custom.css' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
+  {%- feed_meta -%}
+  <img src="https://loadu.goatcounter.com/count?p={{ page.url | url_encode }}" width="1" height="1" alt="" aria-hidden="true" hidden>
+</head>

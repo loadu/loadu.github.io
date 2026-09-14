@@ -1,0 +1,37 @@
+# Site
+title: "~"
+description: "૮꒰⸝⸝>  ̫ <⸝⸝꒱ა"
+url: "https://loadu.github.io"
+baseurl: ""
+timezone: Europe/Moscow
+lang: ru
+
+
+remote_theme: b2a3e8/jekyll-theme-console
+style: dark 
+listen_for_clients_preferred_style: false
+disable_google_fonts: true
+
+
+header_pages:
+  - index.html
+footer: ""
+
+csp_extra: "frame-src https://streamable.com; style-src-attr 'unsafe-inline'; img-src 'self' data: https://loadu.goatcounter.com;"
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+sass:
+  silence_deprecations:
+    - import
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-feed
+
+exclude:
+  - README.md

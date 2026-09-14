@@ -1,0 +1,53 @@
+.container { max-width: 960px; }
+
+pre {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--text-color) 25%, var(--background-color));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--text-color) 5%, var(--background-color));
+  overflow-x: auto;
+}
+
+@keyframes neon {
+  0%, 100% { --c: #ff007f; }
+  25%       { --c: #a000ff; }
+  50%       { --c: #00f0ff; }
+  75%       { --c: #00ff66; }
+  90%       { --c: #ffea00; }
+}
+
+@keyframes neon {
+  0%, 100% { text-shadow: 0 0 2px #fff, 0 0 6px #ff007f, 0 0 16px #ff007f; }
+  25%       { text-shadow: 0 0 2px #fff, 0 0 6px #a000ff, 0 0 16px #a000ff; }
+  50%       { text-shadow: 0 0 2px #fff, 0 0 6px #00f0ff, 0 0 16px #00f0ff; }
+  75%       { text-shadow: 0 0 2px #fff, 0 0 6px #00ff66, 0 0 16px #00ff66; }
+  90%       { text-shadow: 0 0 2px #fff, 0 0 6px #ffea00, 0 0 16px #ffea00; }
+}
+
+.ascii-art {
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  line-height: 1 !important;
+  overflow-y: hidden;
+  -webkit-touch-callout: none;
+  user-select: none;
+  color: #fff;
+  animation: neon 10s infinite linear;
+}
+
+blockquote {
+  color: #789922;
+  font-family: "Comic Sans MS", "Comic Sans", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  border: 0;
+  padding: 0;
+  margin: .5em 0;
+}
+blockquote, blockquote * { font-size: 14px !important; }
+blockquote p { color: inherit; margin: 0; }
+blockquote p::before { content: ">"; }
+img, video { max-width: 100%; height: auto; }
+iframe { max-width: 100%; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
